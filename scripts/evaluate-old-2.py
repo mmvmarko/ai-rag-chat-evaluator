@@ -20,12 +20,6 @@ def send_question_to_target(question: str, truth: str, target_url: str, paramete
         "context": parameters,
     }
     try:
-        # Print or log the request details before sending
-        print("Sending HTTP POST request with the following details:")
-        print(f"URL: {target_url}")
-        print(f"Headers: {headers}")
-        print(f"Body: {json.dumps(body, indent=4)}")
-        
         r = requests.post(target_url, headers=headers, json=body)
         r.encoding = "utf-8"
 
