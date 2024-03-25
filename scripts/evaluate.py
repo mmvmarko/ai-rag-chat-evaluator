@@ -14,7 +14,7 @@ logger = logging.getLogger("scripts")
 
 def send_question_to_target(question: str, truth: str, target_url: str, parameters: dict = {}, raise_error=False):
     headers = {"Content-Type": "application/json",
-               "X-API-Key": "e05f5229d92b4a17b010befb3fb144eb" }
+               "API Key": "e05f5229d92b4a17b010befb3fb144eb" }
     body = {
         "messages": [{"content": question, "role": "user"}],
         "stream": False,
@@ -25,7 +25,7 @@ def send_question_to_target(question: str, truth: str, target_url: str, paramete
         print("Sending HTTP POST request with the following details:")
         print(f"URL: {target_url}")
         # Print headers without exposing the API key value
-        safe_headers = {k: v if k != "X-API-Key" else "REDACTED" for k, v in headers.items()}
+        safe_headers = {k: v if k != "API Key" else "REDACTED" for k, v in headers.items()}
         print(f"Headers: {safe_headers}")
         print(f"Body: {json.dumps(body, indent=4)}")
         
