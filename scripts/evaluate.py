@@ -18,7 +18,7 @@ def send_question_to_target(question: str, truth: str, target_url: str, paramete
     body = {
         "messages": [{"content": question, "role": "user"}],
         "stream": False,
-        "context": parameters,
+     #   "context": parameters,
     }
     try:
         # Print or log the request details before sending
